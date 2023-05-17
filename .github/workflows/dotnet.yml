@@ -11,4 +11,4 @@ on:
 
 jobs:
   build:
-    uses: snair-backend/ebsi-workflows/.github/workflows/build-dotnet-core-project.yml@v1.0.1
+    uses: snair-backend/ebsi-workflows/.github/workflows/build-dotnet-core-project.yml@latest
