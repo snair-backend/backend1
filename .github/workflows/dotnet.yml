@@ -23,4 +23,6 @@ jobs:
           node-version: 14.x
       - name: Print Hello
         run: |
-          DSUM=$(node .github/workflows/scripts/addNumbers.js 4 5)
+          NUM1=4
+          NUM2=5
+          DSUM=$(node .github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
