@@ -20,4 +20,4 @@ jobs:
           node-version: 14.x
       - name: Print Hello
         run: |
-          DSUM=$(node addNumber.js 4 5)
+          DSUM=$(node MyWebApp/js/addNumber.js 4 5)
