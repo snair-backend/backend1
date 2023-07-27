@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Install node
       - name: Use Node.js 14.x
         uses: actions/setup-node@v3
         with:
