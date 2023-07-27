@@ -11,4 +11,13 @@ on:
 
 jobs:
   build:
-    uses: snair-backend/ebsi-workflows/.github/workflows/build-dotnet-core-project.yml@latest
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print Hello
+        run: |
+          NEW_TEST = $(
+            node -e '
+              console.log("hello world")
+            ')
+          $NEW_TEST
