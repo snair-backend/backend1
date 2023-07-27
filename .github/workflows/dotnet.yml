@@ -26,3 +26,4 @@ jobs:
           NUM1=4
           NUM2=5
           DSUM=$(node .github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
+          echo $DSUM
