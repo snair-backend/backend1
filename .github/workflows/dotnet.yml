@@ -29,4 +29,4 @@ jobs:
           NUM2=5
           DSUM=$(node backend-main/.github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
           echo $DSUM
-          cat backend-main/appsettings.json
+          cat backend-main/MyWebApp/appsettings.json
