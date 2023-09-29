@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          path: backend-main
         
       - name: Use Node.js 14.x
         uses: actions/setup-node@v3
@@ -25,5 +27,6 @@ jobs:
         run: |
           NUM1=4
           NUM2=5
-          DSUM=$(node .github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
+          DSUM=$(node backend-main/.github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
           echo $DSUM
+          cat backend-main/appsettings.json
