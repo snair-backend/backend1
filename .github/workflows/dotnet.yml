@@ -12,6 +12,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: backend-main    
     
     steps:
       - name: Checkout Repository
@@ -27,6 +31,6 @@ jobs:
         run: |
           NUM1=4
           NUM2=5
-          DSUM=$(node backend-main/.github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
+          DSUM=$(node ./.github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
           echo $DSUM
-          cat backend-main/MyWebApp/appsettings.json
+          cat ./MyWebApp/appsettings.json
