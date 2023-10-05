@@ -34,3 +34,21 @@ jobs:
           DSUM=$(node ./.github/workflows/scripts/addNumbers.js $NUM1 $NUM2)
           echo $DSUM
           cat ./MyWebApp/appsettings.json
+
+      - run: echo hi > world.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: world.txt
+
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+    
+      - name: Display structure of downloaded files
+        run: ls -R
+    
