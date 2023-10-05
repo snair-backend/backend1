@@ -42,7 +42,7 @@ jobs:
           
       - uses: actions/upload-artifact@v3
         with:
-          path: ./MyWebApp/appsettings.json
+          path: ./backend-main/MyWebApp/appsettings.json
 
   release:
     runs-on: ubuntu-latest
