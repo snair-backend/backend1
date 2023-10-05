@@ -35,10 +35,9 @@ jobs:
           echo $DSUM
           cat ./MyWebApp/appsettings.json
 
-      - run: echo hi > world.txt
+      - run: echo "hi" > world.txt
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
           path: world.txt
 
   release:
@@ -46,8 +45,6 @@ jobs:
 
     steps:
       - uses: actions/download-artifact@v3
-        with:
-          name: my-artifact
     
       - name: Display structure of downloaded files
         run: ls -R
