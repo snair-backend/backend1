@@ -42,7 +42,7 @@ jobs:
           
       - uses: actions/upload-artifact@v3
         with:
-          path: ./backend-main/MyWebApp/appsettings.json
+          path: ./backend-main/MyWebApp/**.json
 
   release:
     runs-on: ubuntu-latest
@@ -53,4 +53,13 @@ jobs:
     
       - name: Display structure of downloaded files
         run: ls -R
+
+      - name: release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: 'test ${{ github.run_attempt }}'
+          name: "Release ${{ github.run_attempt }}"
+          body: 'Backend Project Release ${{ github.run_attempt }}'
+          artifacts: artifact/appsettings.json
+      
     
