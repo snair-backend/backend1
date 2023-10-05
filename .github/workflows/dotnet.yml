@@ -57,7 +57,6 @@ jobs:
       - name: release
         uses: ncipollo/release-action@v1
         with:
-          tag: 'test ${{ github.run_attempt }}'
           name: "Release ${{ github.run_attempt }}"
           body: 'Backend Project Release ${{ github.run_attempt }}'
           artifacts: artifact/appsettings.json
