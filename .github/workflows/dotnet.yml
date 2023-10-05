@@ -35,13 +35,18 @@ jobs:
           echo $DSUM
           cat ./MyWebApp/appsettings.json
 
-      - run: echo "hi" > world.txt
+      - run: |
+          echo "hi" > world.txt
+          ls -la
+          cat world.txt
+          
       - uses: actions/upload-artifact@v3
         with:
-          path: world.txt
+          path: ./MyWebApp/appsettings.json
 
   release:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - uses: actions/download-artifact@v3
